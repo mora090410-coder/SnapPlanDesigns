@@ -2,29 +2,30 @@ function WhoItsFor() {
     const audiences = [
         {
             icon: '🏠',
-            title: 'DIY homeowners',
-            description: 'Planning basements, remodels, or additions — need clarity before calling contractors.'
+            title: 'Homeowners planning a renovation',
+            description: 'You have ideas but need something real to show contractors.'
         },
         {
-            icon: '🔧',
-            title: 'Small contractors',
-            description: 'Need clear layouts from clients to price accurately and reduce project risk.'
+            icon: '🔨',
+            title: 'DIY builders ready to start',
+            description: "You're doing the work yourself but need a clear starting point."
         },
         {
-            icon: '📊',
-            title: 'Small investors',
-            description: 'Validating renovation concepts before committing capital to a project.'
+            icon: '📈',
+            title: 'Investors validating a project',
+            description: 'You need to know if an idea pencils before committing capital.'
         }
     ]
 
+
     return (
-        <section className="section section-alt" id="who-its-for">
+        <section className="audience" id="who-its-for">
             <div className="container">
-                <h2 className="section-title">Who it's for</h2>
-                <div className="card-grid">
+                <h2 className="audience-heading">Perfect for:</h2>
+                <div className="audience-grid">
                     {audiences.map((audience, index) => (
-                        <div className="card" key={index}>
-                            <div className="card-icon">{audience.icon}</div>
+                        <div className="audience-card" key={index}>
+                            <div className="audience-icon">{audience.icon}</div>
                             <h3>{audience.title}</h3>
                             <p>{audience.description}</p>
                         </div>

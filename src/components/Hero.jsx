@@ -1,7 +1,20 @@
 function Hero() {
-    const handleClick = (e, targetId) => {
+    const handlePrimaryClick = (e) => {
         e.preventDefault()
-        const target = document.querySelector(targetId)
+        const target = document.querySelector('#pricing')
+        if (target) {
+            const navHeight = document.querySelector('.nav').offsetHeight
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            })
+        }
+    }
+
+    const handleSecondaryClick = (e) => {
+        e.preventDefault()
+        const target = document.querySelector('#solution')
         if (target) {
             const navHeight = document.querySelector('.nav').offsetHeight
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight
@@ -14,24 +27,30 @@ function Hero() {
 
     return (
         <section className="hero">
-            <div className="container">
+            <div className="hero-content">
                 <h1 className="hero-headline">
-                    Before you call a contractor,<br />
-                    <span className="highlight">snap your plan.</span>
+                    Know what you're building<br />
+                    before you spend a dollar.
                 </h1>
                 <p className="hero-subhead">
-                    Turn rough ideas into layout clarity and bid-ready artifacts contractors can price from.
-                    No permits. No code review. No stamped drawings — just the missing step that gets your project moving.
+                    We turn your rough sketches into the first professional plan of your project—so you can get real bids and move forward with confidence.
                 </p>
-                <div className="hero-ctas">
-                    <a href="#intake" className="btn btn-primary" onClick={(e) => handleClick(e, '#intake')}>
-                        Start intake
+                <div className="hero-cta">
+                    <a
+                        href="#pricing"
+                        className="btn btn-primary btn-lg"
+                        onClick={handlePrimaryClick}
+                    >
+                        Start Your Plan — $700
                     </a>
-                    <a href="#how-it-works" className="btn btn-secondary" onClick={(e) => handleClick(e, '#how-it-works')}>
-                        See how it works
+                    <a
+                        href="#solution"
+                        className="text-link"
+                        onClick={handleSecondaryClick}
+                    >
+                        See an example →
                     </a>
                 </div>
-                <p className="hero-trust">Fast • Fixed-price • Tightly scoped</p>
             </div>
         </section>
     )

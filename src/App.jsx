@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
-import HowItWorks from './components/HowItWorks'
-import Deliverables from './components/Deliverables'
+import Solution from './components/Solution'
 import WhoItsFor from './components/WhoItsFor'
-import IntakeCTA from './components/IntakeCTA'
-import FAQ from './components/FAQ'
+import HowItWorks from './components/HowItWorks'
+import Pricing from './components/Pricing'
+import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 
 function App() {
@@ -15,11 +14,11 @@ function App() {
             <Nav />
             <Hero />
             <Problem />
-            <HowItWorks />
-            <Deliverables />
+            <Solution />
             <WhoItsFor />
-            <IntakeCTA />
-            <FAQ />
+            <HowItWorks />
+            <Pricing />
+            <FinalCTA />
             <Footer />
         </>
     )
